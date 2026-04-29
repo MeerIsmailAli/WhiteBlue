@@ -7,6 +7,7 @@ Generates a short URL from a long URL
 Redirects users from the short URL to the original URL
 Ensures idempotency (same long URL → same short URL)
 ⚙️ Design Decisions
+
 🔹 Short URL Generation
 Used MD5 hashing to generate a compressed and fixed-length short code
 Ensures deterministic mapping (same input → same output)
@@ -29,6 +30,9 @@ Store frequently accessed short URLs (hot keys) in cache
 Flow:
 
 Request → Cache → (miss) → Database → Update Cache
+
+
+
 🛡️ High Availability
 
 To ensure the system remains reliable and fault-tolerant:
